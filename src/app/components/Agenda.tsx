@@ -8,7 +8,6 @@ type Evento = {
     evento: string;
     local: string;
     link?: string;
-    tipo: string;
     descricao: string;
     endereco: string;
 };
