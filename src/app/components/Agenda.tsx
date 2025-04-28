@@ -8,6 +8,7 @@ type Evento = {
     evento: string;
     local: string;
     link?: string;
+    horario?: string;
     descricao: string;
     endereco: string;
 };
@@ -62,6 +63,7 @@ export default function Agenda() {
                         <p><strong>Data:</strong> {selecionado.data}</p>
 
                         <p><strong>Endereço:</strong> {selecionado.endereco}</p>
+                        <p><strong>Horário:</strong> {selecionado.horario}</p>
                         <p className="mt-2">{selecionado.descricao}</p>
 
                         {selecionado.link && (
