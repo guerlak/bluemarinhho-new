@@ -10,6 +10,7 @@ type Evento = {
     link?: string;
     tipo: string;
     descricao: string;
+    endereco: string;
 };
 
 function parseDate(data: string) {
@@ -58,9 +59,10 @@ export default function Agenda() {
                             ✕
                         </button>
                         <h4 className="text-xl font-bold mb-2">{selecionado.evento}</h4>
-                        <p><strong>Tipo:</strong> {selecionado.tipo}</p>
+
                         <p><strong>Data:</strong> {selecionado.data}</p>
-                        <p><strong>Local:</strong> {selecionado.local}</p>
+
+                        <p><strong>Endereço:</strong> {selecionado.endereco}</p>
                         <p className="mt-2">{selecionado.descricao}</p>
 
                         {selecionado.link && (
@@ -70,7 +72,7 @@ export default function Agenda() {
                                 rel="noopener noreferrer"
                                 className="inline-block mt-4"
                             >
-                                Acessar pagina do evento
+                                <span className='text-orange-400 font-black'>Acessar pagina do evento</span>
                             </a>
                         )}
                     </div>

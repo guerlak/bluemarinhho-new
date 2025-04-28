@@ -5,12 +5,10 @@ import { useState } from "react";
 
 export default function Galery() {
     const imagens = [
-        '/img1.jpg',
-        '/img2.jpg',
-        '/img3.jpg',
-        '/img4.jpg',
-        '/img5.jpg',
-
+        '/galeria/img00001.jpeg',
+        '/galeria/img00002.jpeg',
+        '/galeria/img00003.jpeg',
+        '/galeria/img00004.jpeg'
     ];
 
     const [imagemSelecionada, setImagemSelecionada] = useState<string | null>(null);

@@ -1,42 +1,18 @@
 [
     {
-        "data": "25/04/2025",
-        "evento": "Macaco Caolho",
-        "local": "Botafogo - RJ",
-        "descricao": "Um dos maiores festivais de rock do país com várias bandas nacionais.",
-        "link": "https://festivalrockbrasil.com/ingressos",
-        "tipo": "Festival"
-    },
-    {
-        "data": "26/04/2025",
-        "evento": "Quiqui",
-        "local": "São Conrado - RJ",
-        "descricao": "Show mais intimista no tradicional Bar do Zé.",
-        "link": "https://instagram.com/bardoze",
-        "tipo": "Bar"
-    },
-    {
         "data": "10/05/2025",
-        "evento": "Grillo",
+        "evento": "Grillo Grill & Bar",
         "local": "Vg. Pequena - RJ",
-        "descricao": "Apresentação com estrutura de teatro e iluminação especial.",
-        "link": "",
-        "tipo": "Teatro"
-    },
-    {
-        "data": "20/05/2025",
-        "evento": "Festival de Cervejas",
-        "local": "Aterro - RJ",
-        "descricao": "Apresentação no Teatro Municipal de São Paulo.",
-        "link": "",
-        "tipo": "Teatro"
+        "endereco": "Estrada da Boca do Mato, 6 - Vargem Pequena",
+        "descricao": "Gastronomia autoral e muito rock.",
+        "link": "https://www.instagram.com/grillorestaurante/"
     },
     {
         "data": "24/05/2025",
-        "evento": "Ziegue Zague",
+        "evento": "Cervejaria Ziege Zag",
         "local": "Vg. Pequena - RJ",
-        "descricao": "Festival de inverno com várias atrações musicais.",
-        "link": "",
-        "tipo": ""
+        "endereco": "Rua Elísio de Araújo, 285 - Vargem Pequena",
+        "descricao": "Brewpub com show de rock e cervejas artesanais.",
+        "link": "https://www.instagram.com/ziegezag/"
     }
 ]
