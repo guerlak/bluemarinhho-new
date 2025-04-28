@@ -1,9 +1,19 @@
 [
     {
+        "data": "01/05/2025",
+        "evento": "P'Alma Sessions",
+        "local": "Horto - RJ",
+        "endereco": "Rua Pacheco Leão, 696 - J. Botanico",
+        "horario": "20h",
+        "descricao": "Gastronomia e música ao vivo.",
+        "link": "https://www.instagram.com/grillorestaurante/"
+    },
+    {
         "data": "10/05/2025",
         "evento": "Grillo Grill & Bar",
         "local": "Vg. Pequena - RJ",
         "endereco": "Estrada da Boca do Mato, 6 - Vargem Pequena",
+        "horario": "20h",
         "descricao": "Gastronomia autoral e muito rock.",
         "link": "https://www.instagram.com/grillorestaurante/"
     },
@@ -12,6 +22,7 @@
         "evento": "Cervejaria Ziege Zag",
         "local": "Vg. Pequena - RJ",
         "endereco": "Rua Elísio de Araújo, 285 - Vargem Pequena",
+        "horario": "18h",
         "descricao": "Brewpub com show de rock e cervejas artesanais.",
         "link": "https://www.instagram.com/ziegezag/"
     }
