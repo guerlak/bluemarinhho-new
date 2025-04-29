@@ -1,6 +1,5 @@
 'use client'
 import { BiPlusCircle } from 'react-icons/bi';
-import eventos from '../data/eventos.json';
 import { useState } from 'react';
 import { formatDateBR } from '../utils/tools';
 
@@ -19,8 +18,6 @@ export default function Agenda({ eventos }: { eventos: any[] }) {
 
 
     const [selecionado, setSelecionado] = useState<Evento | null>(null);
-
-
 
 
     return (
