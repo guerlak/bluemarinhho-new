@@ -3,13 +3,20 @@ import Agenda from './components/Agenda';
 import Galery from './components/Galery';
 import Hero from './components/Hero';
 import Videos from './components/Videos';
+import sql from '@/app/lib/data';
 
-export default function Home() {
+export default async function Home() {
+
+  const eventos = await await sql`
+  SELECT * FROM eventos
+  ORDER BY data ASC
+`;
+
   return (
     <>
       <Hero />
       <div className='sm:flex'>
-        <Agenda />
+        <Agenda eventos={eventos} />
         <Galery />
       </div>
       <Videos />

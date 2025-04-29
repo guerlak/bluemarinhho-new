@@ -3,8 +3,10 @@ import { BiPlusCircle } from 'react-icons/bi';
 import eventos from '../data/eventos.json';
 import { useState } from 'react';
 
+
+
 type Evento = {
-    data: string;
+    data: Date;
     evento: string;
     local: string;
     link?: string;
@@ -17,25 +19,23 @@ function parseDate(data: string) {
     const [dia, mes, ano] = data.split('/');
     return new Date(`${ano}-${mes}-${dia}`);
 }
+export default function Agenda({ eventos }: { eventos: Evento[] }) {
 
-export default function Agenda() {
+
     const [selecionado, setSelecionado] = useState<Evento | null>(null);
 
-    const eventosOrdenados = [...eventos].sort((a, b) => {
-        return parseDate(a.data).getTime() - parseDate(b.data).getTime();
-    });
 
     return (
         <section id="agenda" className="p-8 bg-gray-50 sm:w-1/2">
             <h3 className="text-2xl font-bold mb-4">Agenda</h3>
             <ul className="space-y-4">
-                {eventosOrdenados.map((item, index) => (
+                {eventos.map((item, index) => (
                     <li
                         key={index}
                         className="border p-4 rounded-md shadow-sm bg-white hover:shadow-md transition flex justify-between items-center"
                     >
                         <div>
-                            <p className="font-semibold">{item.data} - {item.evento}</p>
+                            <p className="font-semibold">{item.data.toLocaleDateString()} - {item.evento}</p>
                             <p className="text-gray-600">{item.local}</p>
                         </div>
                         <button
@@ -60,7 +60,7 @@ export default function Agenda() {
                         </button>
                         <h4 className="text-xl font-bold mb-2">{selecionado.evento}</h4>
 
-                        <p><strong>Data:</strong> {selecionado.data}</p>
+                        <p><strong>Data:</strong> {selecionado.data.toLocaleDateString()}</p>
 
                         <p><strong>Endereço:</strong> {selecionado.endereco}</p>
                         <p><strong>Horário:</strong> {selecionado.horario}</p>
