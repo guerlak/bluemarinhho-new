@@ -7,7 +7,7 @@ import sql from '@/app/lib/data';
 
 export default async function Home() {
 
-  const eventos = await await sql`
+  const eventos = await sql`
   SELECT * FROM eventos
   ORDER BY data ASC
 `;

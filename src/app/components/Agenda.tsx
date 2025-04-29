@@ -3,8 +3,6 @@ import { BiPlusCircle } from 'react-icons/bi';
 import eventos from '../data/eventos.json';
 import { useState } from 'react';
 
-
-
 type Evento = {
     data: Date;
     evento: string;
@@ -15,11 +13,8 @@ type Evento = {
     endereco: string;
 };
 
-function parseDate(data: string) {
-    const [dia, mes, ano] = data.split('/');
-    return new Date(`${ano}-${mes}-${dia}`);
-}
-export default function Agenda({ eventos }: { eventos: Evento[] }) {
+
+export default function Agenda({ eventos }: { eventos: any[] }) {
 
 
     const [selecionado, setSelecionado] = useState<Evento | null>(null);
