@@ -2,6 +2,7 @@
 import { BiPlusCircle } from 'react-icons/bi';
 import eventos from '../data/eventos.json';
 import { useState } from 'react';
+import { formatDateBR } from '../utils/tools';
 
 type Evento = {
     data: Date;
@@ -20,6 +21,8 @@ export default function Agenda({ eventos }: { eventos: any[] }) {
     const [selecionado, setSelecionado] = useState<Evento | null>(null);
 
 
+
+
     return (
         <section id="agenda" className="p-8 bg-gray-50 sm:w-1/2">
             <h3 className="text-2xl font-bold mb-4">Agenda</h3>
@@ -30,7 +33,7 @@ export default function Agenda({ eventos }: { eventos: any[] }) {
                         className="border p-4 rounded-md shadow-sm bg-white hover:shadow-md transition flex justify-between items-center"
                     >
                         <div>
-                            <p className="font-semibold">{item.data.toLocaleDateString()} - {item.evento}</p>
+                            <p className="font-semibold">{formatDateBR(item.data)} - {item.evento}</p>
                             <p className="text-gray-600">{item.local}</p>
                         </div>
                         <button
@@ -55,7 +58,7 @@ export default function Agenda({ eventos }: { eventos: any[] }) {
                         </button>
                         <h4 className="text-xl font-bold mb-2">{selecionado.evento}</h4>
 
-                        <p><strong>Data:</strong> {selecionado.data.toLocaleDateString()}</p>
+                        <p><strong>Data:</strong>{formatDateBR(selecionado.data)}</p>
 
                         <p><strong>Endereço:</strong> {selecionado.endereco}</p>
                         <p><strong>Horário:</strong> {selecionado.horario}</p>
