@@ -3,11 +3,11 @@ import Agenda from './components/Agenda';
 import Galery from './components/Galery';
 import Hero from './components/Hero';
 import Videos from './components/Videos';
-import { fetchEvents } from '@/app/lib/data';
+import { getAllEvents } from '@/app/lib/data';
 
 export default async function Home() {
 
-  const eventos = await fetchEvents();
+  const eventos = await getAllEvents();
 
   return (
     <>
