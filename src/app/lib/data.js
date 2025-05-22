@@ -9,6 +9,5 @@ export async function getAllEvents() {
     SELECT * FROM eventos
     ORDER BY data ASC
   `;
-
   return events;
 }
