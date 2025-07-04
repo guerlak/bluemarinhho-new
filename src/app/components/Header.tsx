@@ -15,7 +15,7 @@ export default function Header() {
                 </div>
             </Link>
             <nav className="space-x-4">
-                <Link href="/sobre" className='text-xl hover:text-orange-400 transition duration-200'>Quem Somos</Link>
+                <Link href="/sobre" className='text-xl hover:text-orange-400 transition duration-200'><h2>Quem Somos</h2></Link>
             </nav>
         </header >
     );

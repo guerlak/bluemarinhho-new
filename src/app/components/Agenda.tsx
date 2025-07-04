@@ -3,21 +3,24 @@ import { BiPlusCircle } from 'react-icons/bi';
 import { useState } from 'react';
 import { formatDateBR } from '../utils/tools';
 
-type Evento = {
-    data: Date;
-    evento: string;
-    local: string;
-    link?: string;
-    horario?: string;
-    descricao: string;
-    endereco: string;
-};
-
 
 export default function Agenda({ eventos }: { eventos: any[] }) {
 
+    //console.log(eventos);
 
-    const [selecionado, setSelecionado] = useState<Evento | null>(null);
+    const formatter = new Intl.DateTimeFormat('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23',
+        // *** AQUI ESTÁ A CHAVE: ESPECIFICAR O FUSO HORÁRIO ***
+        timeZone: 'America/Sao_Paulo'
+    });
+
+
+    const [selecionado, setSelecionado] = useState<any | null>(null);
 
 
     return (
@@ -30,8 +33,8 @@ export default function Agenda({ eventos }: { eventos: any[] }) {
                         className="border p-4 rounded-md shadow-sm bg-white hover:shadow-md transition flex justify-between items-center"
                     >
                         <div>
-                            <p className="font-semibold">{formatDateBR(item.data)} - {item.evento}</p>
-                            <p className="text-gray-600">{item.local}</p>
+                            <p className="font-semibold">{item.data_hora.toLocaleDateString('pt-BR')} - {item.nome}</p>
+                            <p className="text-gray-600">{item.endereco}</p>
                         </div>
                         <button
                             onClick={() => setSelecionado(item)}
@@ -53,13 +56,13 @@ export default function Agenda({ eventos }: { eventos: any[] }) {
                         >
                             ✕
                         </button>
-                        <h4 className="text-xl font-bold mb-2">{selecionado.evento}</h4>
+                        <h4 className="text-xl font-bold mb-2">{selecionado.nome}</h4>
 
-                        <p><strong>Data:</strong>{formatDateBR(selecionado.data)}</p>
+                        <p><strong>Data:</strong> {selecionado.data_hora.toLocaleDateString('pt-BR')}</p>
 
                         <p><strong>Endereço:</strong> {selecionado.endereco}</p>
-                        <p><strong>Horário:</strong> {selecionado.horario}</p>
-                        <p className="mt-2">{selecionado.descricao}</p>
+                        <p><strong>Horário:</strong> {selecionado.data_hora.toLocaleTimeString('pt-BR')}</p>
+                        <p className="mt-2"> {selecionado.descricao}</p>
 
                         {selecionado.link && (
                             <a

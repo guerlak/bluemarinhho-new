@@ -13,8 +13,6 @@ export default function Footer() {
 
                 </div>
 
-
-
                 <div className="flex space-x-7">
                     <a href="https://instagram.com/bandabluemarinho" target="_blank" rel="noreferrer">
                         <FaInstagram className="text-xl hover:text-pink-400" size={40} />

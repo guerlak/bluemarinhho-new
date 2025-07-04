@@ -6,8 +6,15 @@ export const sql = postgres(process.env.POSTGRES_URL, {
 
 export async function getAllEvents() {
   const events = await sql`
-    SELECT * FROM eventos
-    ORDER BY data ASC
+    SELECT
+    e.data_hora,
+    l.nome,
+    l.endereco,
+    l.cidade 
+FROM
+    eventos AS e
+JOIN
+    estabelecimentos AS l ON e.id_estabelecimento = l.id;
   `;
   return events;
 }
