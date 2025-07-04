@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import Videos from './components/Videos';
 import { getAllEvents } from '@/app/lib/data';
 
-export const revalidate = 6000;
+export const revalidate = 300;
 
 export default async function Home() {
 
