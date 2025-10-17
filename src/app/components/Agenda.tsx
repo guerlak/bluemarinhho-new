@@ -1,5 +1,5 @@
 'use client'
-import { BiPlusCircle } from 'react-icons/bi';
+import { BiPlusCircle, BiMinusCircle } from 'react-icons/bi';
 import { useState } from 'react';
 import { formatDateBR } from '../utils/tools';
 
@@ -20,63 +20,65 @@ export default function Agenda({ eventos }: { eventos: any[] }) {
     });
 
 
-    const [selecionado, setSelecionado] = useState<any | null>(null);
+    const [openIndex, setOpenIndex] = useState(null);
+
+    // Função para alternar o estado de um item.
+    const handleToggle = (index: any) => {
+        // Se o item clicado já estiver aberto, fecha-o.
+        // Caso contrário, abre o item clicado.
+        setOpenIndex(openIndex === index ? null : index);
+    };
 
 
     return (
-        <section id="agenda" className="p-8 bg-gray-50 sm:w-1/2">
+        <section id="agenda" className="p-8 bg-gray-50 ">
             <h3 className="text-2xl font-bold mb-4">Agenda</h3>
             <ul className="space-y-4">
                 {eventos.map((item, index) => (
                     <li
                         key={index}
-                        className="border p-4 rounded-md shadow-sm bg-white hover:shadow-md transition flex justify-between items-center"
+                        className="border rounded-md shadow-sm bg-white hover:shadow-md transition-all duration-300"
                     >
-                        <div>
-                            <p className="font-semibold">{item.data_hora.toLocaleDateString('pt-BR')} - {item.nome}</p>
-                            <p className="text-gray-600">{item.endereco}</p>
-                        </div>
+                        {/* Botão para o cabeçalho do accordion.
+                    Toda a área do cabeçalho é clicável. */}
                         <button
-                            onClick={() => setSelecionado(item)}
-                            className="text-orange-400 cursor-pointer"
+                            onClick={() => handleToggle(index)}
+                            className="w-full text-left p-4 flex justify-between items-center cursor-pointer focus:outline-none"
                         >
-                            <BiPlusCircle size={30} />
+
+                            <div>
+                                <p className="font-semibold text-lg">{item.data_hora.toLocaleDateString('pt-BR')} - {item.nome}</p>
+
+                            </div>
+                            {/* Ícone que muda de acordo com o estado do accordion. */}
+                            {openIndex === index ? (
+                                <BiMinusCircle size={30} className="text-orange-400" />
+                            ) : (
+                                <BiPlusCircle size={30} className="text-orange-400" />
+                            )}
                         </button>
+
+                        {/* Conteúdo que é exibido ou ocultado.
+                    As classes 'max-h-0' e 'overflow-hidden' o ocultam. */}
+                        <div
+                            className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 p-4' : 'max-h-0'
+                                }`}
+                        >
+                            {/* Conteúdo adicional que você quer mostrar quando o accordion estiver aberto */}
+                            <p className="mt-2 text-gray-700">
+                                {item.descricao || 'Nenhum detalhe disponível.'}
+                            </p>
+                            <p className="mt-2 text-gray-700">
+                                Endereço: {item.endereco || 'Nenhum detalhe disponível.'}
+                            </p>
+
+                            <p className="mt-4 text-gray-700">
+                                <a href={item.link} target='_blank' className='bg-orange-300 p-2 rounded-sm hover:bg-orange-400 transition'>Pagina do evento</a>
+                            </p>
+                        </div>
                     </li>
                 ))}
             </ul>
-
-            {/* Modal de detalhes simples */}
-            {selecionado && (
-                <div className="fixed inset-0 bg-black opacity-94 flex items-center justify-center z-50">
-                    <div className="bg-white p-6 rounded-md shadow-lg max-w-lg w-full relative">
-                        <button
-                            className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-                            onClick={() => setSelecionado(null)}
-                        >
-                            ✕
-                        </button>
-                        <h4 className="text-xl font-bold mb-2">{selecionado.nome}</h4>
-
-                        <p><strong>Data:</strong> {selecionado.data_hora.toLocaleDateString('pt-BR')}</p>
-
-                        <p><strong>Endereço:</strong> {selecionado.endereco}</p>
-                        <p><strong>Horário:</strong> {selecionado.data_hora.toLocaleTimeString('pt-BR')}</p>
-                        <p className="mt-2"> {selecionado.descricao}</p>
-
-                        {selecionado.link && (
-                            <a
-                                href={selecionado.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block mt-4"
-                            >
-                                <span className='text-orange-400 font-black'>Acessar pagina do evento</span>
-                            </a>
-                        )}
-                    </div>
-                </div>
-            )}
 
         </section>
     );

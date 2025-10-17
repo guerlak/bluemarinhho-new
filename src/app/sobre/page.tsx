@@ -3,7 +3,7 @@ import Integrantes from '../components/Integrantes';
 export default function Sobre() {
     return (
         <>
-            <section className="p-8 max-w-4xl mx-auto">
+            <section className="p-8 mx-auto">
                 <section className="p-8 bg-white text-gray-800">
                     <h2 className="text-3xl font-bold mb-4">A Energia do Rock e Blues em versões únicas</h2>
                     <p className="mb-4">

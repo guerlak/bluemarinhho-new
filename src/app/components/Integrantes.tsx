@@ -12,7 +12,7 @@ const integrantes: Integrante[] = [
         nome: 'Paola Marinho',
         funcao: 'Vocal',
         frase: '"A distorção é a minha voz."',
-        imagem: '/integrantes/paola.jpg',
+        imagem: '/integrantes/paola1.jpg',
     },
     {
         nome: 'Felipe Campos',
@@ -27,10 +27,10 @@ const integrantes: Integrante[] = [
         imagem: '/integrantes/fabio.jpg',
     },
     {
-        nome: 'Guilherme Braun',
+        nome: 'Raphael Piquet',
         funcao: 'Baixo',
         frase: '"A batida é o coração do rock."',
-        imagem: '/integrantes/braun.jpg',
+        imagem: '/integrantes/piquet.jpg',
     },
     {
         nome: 'Rafael Guerlak',
@@ -44,7 +44,7 @@ const integrantes: Integrante[] = [
 export default function Integrantes() {
     return (
         <section className="p-8 bg-white" id="integrantes">
-            <h2 className="text-3xl font-bold text-center mb-10">Quem Somos</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Integrantes</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {integrantes.map((membro, index) => (

@@ -10,7 +10,9 @@ export async function getAllEvents() {
     e.data_hora,
     l.nome,
     l.endereco,
-    l.cidade 
+    l.cidade,
+    l.descricao,
+    l.link
 FROM
     eventos AS e
 JOIN
