@@ -10,7 +10,7 @@ type Integrante = {
 const integrantes: Integrante[] = [
     {
         nome: 'Paola Marinho',
-        funcao: 'Vocal',
+        funcao: 'Voz',
         frase: '"A distorção é a minha voz."',
         imagem: '/integrantes/paola1.jpg',
     },
@@ -55,7 +55,7 @@ export default function Integrantes() {
                         <img
                             src={membro.imagem}
                             alt={membro.nome}
-                            className="w-full h-64 object-cover"
+                            className="w-full h-90 object-cover"
                         />
                         <div className="p-4 text-center">
                             <h3 className="text-xl font-bold">{membro.nome}</h3>
