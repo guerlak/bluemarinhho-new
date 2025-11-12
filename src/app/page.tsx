@@ -4,8 +4,6 @@ import Agenda from './components/Agenda';
 import Hero from './components/Hero';
 import Videos from './components/Videos';
 import { getAllEvents } from '@/app/lib/data';
-import { Evento } from './lib/types/types';
-
 
 export const revalidate = 1000;
 
