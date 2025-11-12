@@ -32,8 +32,7 @@ export default function Agenda({ eventos }: { eventos: Evento[] }) {
                             )}
                         </button>
                         <div
-                            className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 p-4' : 'max-h-0'
-                                }`}
+                            className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 p-4' : 'max-h-0'}`}
                         >
                             <p className="mt-2 text-gray-700">
                                 {item.descricao || 'Nenhum detalhe disponível.'}
