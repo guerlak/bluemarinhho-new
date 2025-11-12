@@ -1,5 +1,3 @@
-'use client';
-
 type Integrante = {
     nome: string;
     funcao: string;

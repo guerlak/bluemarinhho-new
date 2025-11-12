@@ -2,8 +2,6 @@ export default function Videos() {
     return (
 
         <section id="videos" className="p-8 bg-gray-100">
-
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="aspect-video w-full">
                     <iframe
