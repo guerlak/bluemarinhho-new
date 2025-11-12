@@ -1,12 +1,12 @@
 
 
-## Checking the website locally
+## Checking website locally
 
 Running the development server:
 
 ```bash
 npm install
-# then
+# and then
 npm run dev
 
 ```

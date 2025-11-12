@@ -6,3 +6,10 @@ export type Evento = {
     endereco: string;
     link: string;
 };
+
+export type Integrante = {
+    nome: string;
+    funcao: string;
+    frase: string;
+    imagem: string;
+};

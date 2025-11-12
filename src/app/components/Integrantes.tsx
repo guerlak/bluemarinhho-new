@@ -1,9 +1,4 @@
-type Integrante = {
-    nome: string;
-    funcao: string;
-    frase: string;
-    imagem: string;
-};
+import { Integrante } from "../lib/types/types";
 
 const integrantes: Integrante[] = [
     {

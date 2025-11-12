@@ -2,7 +2,7 @@
 import { BiPlusCircle, BiMinusCircle } from 'react-icons/bi';
 import { useState } from 'react';
 import { Evento } from '../lib/types/types';
-import { formatter } from '../utils/tools';
+import { dateFormatter } from '../utils/tools';
 
 export default function Agenda({ eventos }: { eventos: Evento[] }) {
 
@@ -24,7 +24,7 @@ export default function Agenda({ eventos }: { eventos: Evento[] }) {
                             onClick={() => handleToggle(index)}
                             className="w-full text-left p-4 flex justify-between items-center cursor-pointer focus:outline-none"
                         >
-                            <p className="font-semibold text-lg">{formatter.format(item.data_hora)} - {item.nome}</p>
+                            <p className="font-semibold text-lg">{dateFormatter.format(item.data_hora)} - {item.nome}</p>
                             {openIndex === index ? (
                                 <BiMinusCircle size={30} className="text-orange-400" />
                             ) : (
