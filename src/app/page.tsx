@@ -1,5 +1,4 @@
 
-import { unstable_cache } from 'next/cache';
 import Agenda from './components/Agenda';
 import Hero from './components/Hero';
 import Videos from './components/Videos';

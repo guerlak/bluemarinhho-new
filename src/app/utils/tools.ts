@@ -1,4 +1,9 @@
-export function formatDateBR(date: Date) {
-    const corrected = new Date(date.getTime() + 3 * 60 * 60 * 1000); // Adiciona 3h
-    return corrected.toLocaleDateString('pt-BR');
-}
+export const formatter = new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
+    timeZone: 'America/Sao_Paulo'
+});

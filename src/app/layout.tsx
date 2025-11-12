@@ -1,4 +1,3 @@
-// app/layout.tsx
 import './globals.css';
 import { Bebas_Neue, Roboto_Condensed } from 'next/font/google';
 import Header from './components/Header';
@@ -11,17 +10,15 @@ export const metadata = {
 
 const headingFont = Bebas_Neue({
   subsets: ['latin'],
-  weight: ['400'], // Bebas Neue geralmente só tem o peso regular (400)
-  variable: '--font-heading', // Define uma variável CSS para usar a fonte
+  weight: ['400'],
+  variable: '--font-heading',
   display: 'swap',
 });
 
-// 2. Configuração da fonte Roboto Condensed para o Corpo do Texto
-// É legível e tem um visual "condensado" que complementa o estilo.
 const bodyFont = Roboto_Condensed({
   subsets: ['latin'],
-  weight: ['300', '400', '700'], // Carregando pesos Light, Regular e Bold
-  variable: '--font-body', // Define uma variável CSS para usar a fonte
+  weight: ['300', '400', '700'],
+  variable: '--font-body',
   display: 'swap',
 });
 

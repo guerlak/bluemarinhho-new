@@ -1,6 +1,5 @@
-'use client'
+
 import Link from "next/link";
-//                         <p><strong>Data:</strong> {selecionado.data}</p>'
 
 import { useState } from "react";
 

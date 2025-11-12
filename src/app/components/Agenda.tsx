@@ -1,23 +1,12 @@
 'use client'
 import { BiPlusCircle, BiMinusCircle } from 'react-icons/bi';
 import { useState } from 'react';
-import { FaInstagram } from 'react-icons/fa';
 import { Evento } from '../lib/types/types';
+import { formatter } from '../utils/tools';
 
 export default function Agenda({ eventos }: { eventos: Evento[] }) {
 
-    const formatter = new Intl.DateTimeFormat('pt-BR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hourCycle: 'h23',
-        timeZone: 'America/Sao_Paulo'
-    });
-
     const [openIndex, setOpenIndex] = useState(null);
-
     const handleToggle = (index: any) => {
         setOpenIndex(openIndex === index ? null : index);
     };
@@ -42,20 +31,18 @@ export default function Agenda({ eventos }: { eventos: Evento[] }) {
                                 <BiPlusCircle size={30} className="text-orange-400" />
                             )}
                         </button>
-
                         <div
                             className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 p-4' : 'max-h-0'
                                 }`}
                         >
-
                             <p className="mt-2 text-gray-700">
                                 {item.descricao || 'Nenhum detalhe disponível.'}
                             </p>
                             <p className="mt-2 text-gray-700">
                                 Endereço: {item.endereco || 'Nenhum detalhe disponível.'}
                             </p>
-                            <div className="mt-4 text-gray-700 w-2">
-                                {item.link ? <a href={item.link} target='_blank' className='max-md'><FaInstagram size={30} /></a> : ''}
+                            <div className="mt-4 text-orange-400 w-40 flex">
+                                {item.link ? <a href={item.link} target='_blank' className='max-md flex'>Mais informações</a> : ''}
                             </div>
                         </div>
                     </li>
